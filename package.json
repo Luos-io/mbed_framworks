@@ -1,0 +1,16 @@
+{
+    "name": "framework-mbed",
+    "version": "4.151.0",
+    "description": "Arm Mbed OS is a platform operating system designed for the internet of things",
+    "keywords": [
+      "framework",
+      "os",
+      "arm",
+      "hal"
+    ],
+    "homepage": "https://os.mbed.com/",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/ARMmbed/mbed-os"
+    }
+  }
