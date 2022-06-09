@@ -100,11 +100,11 @@ void _sercom_set_handler(
 /** \internal
  * Generates a SERCOM interrupt handler function for a given SERCOM index.
  */
-#define _SERCOM_INTERRUPT_HANDLER(n, unused) \
-		void SERCOM##n##_Handler(void) \
-		{ \
-			_sercom_interrupt_handlers[n](n); \
-		}
+#define _SERCOM_INTERRUPT_HANDLER(n, unused)             \
+    __attribute__((weak)) void SERCOM##n##_Handler(void) \
+    {                                                    \
+        _sercom_interrupt_handlers[n](n);                \
+    }
 
 /**
  * \internal

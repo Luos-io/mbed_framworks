@@ -213,7 +213,7 @@ uint8_t extint_get_current_channel(void)
 }
 
 /** Handler for the EXTINT hardware module interrupt. */
-void EIC_Handler(void)
+__attribute__((weak)) void EIC_Handler(void)
 {
     /* Find any triggered channels, run associated callback handlers */
     for (_current_channel = 0; _current_channel < EIC_NUMBER_OF_INTERRUPTS ; _current_channel++) {

@@ -122,11 +122,11 @@ enum status_code tc_unregister_callback(
  *
  * Auto-generate a set of interrupt handlers for each TC in the device.
  */
-#define _TC_INTERRUPT_HANDLER(n, m) \
-		void TC##n##_Handler(void) \
-		{ \
-			_tc_interrupt_handler(m); \
-		}
+#define _TC_INTERRUPT_HANDLER(n, m)                  \
+    __attribute__((weak)) void TC##n##_Handler(void) \
+    {                                                \
+        _tc_interrupt_handler(m);                    \
+    }
 
 #if (SAML21E) || (SAML21G)
 _TC_INTERRUPT_HANDLER(0,0)
